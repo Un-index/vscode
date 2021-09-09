@@ -23,10 +23,9 @@ export async function sha1Hex(str: string): Promise<string> {
 	}
 
 	// Otherwise fallback to `StringSHA1`
-	else {
-		const computer = new StringSHA1();
-		computer.update(str);
+	const computer = new StringSHA1();
+	computer.update(str);
 
-		return computer.digest();
-	}
+	return computer.digest();
+
 }
